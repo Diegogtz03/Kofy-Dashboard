@@ -1,5 +1,11 @@
 import '@/styles/globals.css'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps, router }) {
+  return (
+    <main>
+      <Component key={router.pathname} {...pageProps} />
+    </main>
+  );
 }
+
+export default App;
