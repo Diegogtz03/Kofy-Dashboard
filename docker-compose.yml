@@ -9,8 +9,8 @@ services:
     networks:
       - app-network
 
-  nginx:
-    container_name: nginx
+  dashboard-nginx:
+    container_name: dashboard-nginx
     image: jonasal/nginx-certbot
     restart: always
     environment:
