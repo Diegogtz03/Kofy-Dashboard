@@ -1,0 +1,39 @@
+.wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6px;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid #6a6a6a;
+  background: black;
+  color: rgb(61, 61, 61);
+  border-radius: 20px;
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  border: 1px solid rgb(132, 132, 132);
+  color: rgb(132, 132, 132);
+  box-shadow: 0 0 20px -5px rgba(221, 221, 221, 0.707);
+}
+
+.button:active {
+  scale: 0.99;
+  border: 1px solid #6a6a6a;
+  color: rgb(141, 141, 141);
+}

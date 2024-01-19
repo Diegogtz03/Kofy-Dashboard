@@ -6,7 +6,66 @@
   height: 100vh;
 }
 
+.video {
+  width: 220px;
+  height: 220px;
+}
+
 .title {
   font-size: 3rem;
   font-weight: 300;
+  pointer-events: none;
+  margin-top: -35px;
+}
+
+.loginInput {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  background: white;
+  color: black;
+  margin: 10px 0;
+  font-size: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+
+  box-shadow: 0 0 20px -5px rgba(221, 221, 221, 0.707);
+
+  margin-top: 2rem;
+}
+
+.loginInput:focus {
+  outline: none;
+}
+
+.loginInput:focus::placeholder {
+  color: transparent;
+}
+
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  background: #7647dcd8;
+  color: black;
+  border-radius: 100%;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.loginBtn:hover {
+  background: #7647dc;
+}
+
+.loginBtn:active {
+  scale: 0.99;
+  background: #7647dc;
 }
