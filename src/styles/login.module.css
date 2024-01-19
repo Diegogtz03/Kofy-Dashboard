@@ -7,27 +7,27 @@
 }
 
 .video {
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 300;
   pointer-events: none;
   margin-top: -35px;
 }
 
 .loginInput {
-  width: 200px;
-  height: 40px;
+  width: 250px;
+  height: 50px;
   border: 1px solid #ccc;
   padding: 0 20px;
   background: white;
   color: black;
   margin: 10px 0;
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 30px;
   text-align: center;
   font-weight: bold;
 

@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+}
+
+.input {
+  background-color: rgb(227, 227, 227);
+  color: black;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  padding-left: 10px;
+  width: 40rem;
+  height: 4rem;
+  font-size: 1.1rem;
+
+  resize: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.removeBtn {
+  background-color: transparent;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  padding: 3px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.removeBtn:hover {
+  background-color: #353535;
+}

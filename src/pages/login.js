@@ -5,6 +5,7 @@ import Image from 'next/image';
 import HeaderBar from '@/components/HeaderBar/HeaderBar';
 import toastStyles from '@/components/Toast/Toast.module.css';
 import Toast from '@/components/Toast/Toast';
+import { useRouter } from 'next/router';
 import { useState, useRef } from 'react';
 import { getSpeechSession } from '@/api/speech-sessions';
 
@@ -13,6 +14,7 @@ const zenTokyo = localFont({
 })
 
 export default function Login() {
+  const router = useRouter();
   const [sessionId, setSessionId] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState("");
@@ -67,7 +69,12 @@ export default function Login() {
 
     if (data.success) {
       showToast(data.message, 1)
-      router.push("/sesion");
+      setTimeout(() => {
+        router.push({
+          pathname: '/sesion',
+          query: { id: sessionId }
+        });
+      }, 800);
     } else {
       showToast(data.message, 2)
     }
@@ -105,7 +112,7 @@ export default function Login() {
             </div>
 
             <button className={styles.loginBtn} onClick={handleLogin} disabled={loading}>
-              <Image src='/icons/rightArrow.svg' width={20} height={20} alt='icono de flecha' />
+              <Image src='/icons/rightArrow.svg' width={30} height={30} alt='icono de flecha' />
             </button>
           </div>
         </div>

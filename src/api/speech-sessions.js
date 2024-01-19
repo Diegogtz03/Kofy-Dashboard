@@ -1,10 +1,18 @@
+import objectToUrlEncoded from "@/utils/encoder";
+
 export async function getSpeechSession(accessId) {
-  var myFormData = new FormData();
-  myFormData.append("accessId", accessId);
+  var form = {
+    'accessId': accessId
+  }
+
+  var encodedData = objectToUrlEncoded(form)
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/dashboard/getSummary`, {
     method: "POST",
-    body: myFormData,
+    body: encodedData,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
   });
 
   const data = JSON.parse(await res.text());
@@ -19,7 +27,39 @@ export async function getSpeechSession(accessId) {
 
   return {
     success: true,
-    data: data.current_text,
+    data: data.resultado,
     message: 'Sesión iniciada correctamente'
+  };
+}
+
+
+export async function verifySpeechSession(accessId, sessionData) {
+  var form = {
+    'accessId': accessId,
+    'session': JSON.stringify({ "resultado": sessionData })
+  }
+
+  var encodedData = objectToUrlEncoded(form)
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/dashboard/verifySummary`, {
+    method: "POST",
+    body: encodedData,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
+
+  const data = JSON.parse(await res.text());
+
+  if (res.status !== 200) {
+    return {
+      success: false,
+      message: "Error, intente nuevamente"
+    }
+  }
+
+  return {
+    success: true,
+    message: 'Sesión verificada correctamente'
   };
 }
