@@ -7,7 +7,7 @@ services:
     env_file:
       - .env.local
     networks:
-      - app-network
+      - dashboard-network
 
   dashboard-nginx:
     container_name: dashboard-nginx
@@ -24,11 +24,11 @@ services:
     depends_on:
       - kofydash
     networks:
-      - app-network
+      - dashboard-network
 
 volumes:
   nginx_secrets:
 
 networks:
-  app-network:
+  dashboard-network:
     driver: bridge
