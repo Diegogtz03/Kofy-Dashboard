@@ -19,7 +19,7 @@ services:
       - 8080:80
       - 4043:443
     volumes:
-      - nginx_secrets:/etc/letsencrypt
+      - nginx_secrets_dashboard:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
     depends_on:
       - kofydash
@@ -27,7 +27,7 @@ services:
       - dashboard-network
 
 volumes:
-  nginx_secrets:
+  nginx_secrets_dashboard:
 
 networks:
   dashboard-network:
