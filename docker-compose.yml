@@ -7,28 +7,8 @@ services:
     env_file:
       - .env.local
     networks:
-      - dashboard-network
-
-  dashboard-nginx:
-    container_name: dashboard-nginx
-    image: jonasal/nginx-certbot
-    restart: always
-    environment:
-      - CERTBOT_EMAIL=diloensenas@gmail.com
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - nginx_secrets_dashboard:/etc/letsencrypt
-      - ./user_conf.d:/etc/nginx/user_conf.d
-    depends_on:
-      - kofydash
-    networks:
-      - dashboard-network
-
-volumes:
-  nginx_secrets_dashboard:
+      - router-network
 
 networks:
-  dashboard-network:
-    driver: bridge
+  router-network:
+    external: true
