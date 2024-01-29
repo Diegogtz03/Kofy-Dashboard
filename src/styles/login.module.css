@@ -6,6 +6,15 @@
   height: 100vh;
 }
 
+.inputWrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
 .video {
   width: 280px;
   height: 280px;
@@ -32,8 +41,6 @@
   font-weight: bold;
 
   box-shadow: 0 0 20px -5px rgba(221, 221, 221, 0.707);
-
-  margin-top: 2rem;
 }
 
 .loginInput:focus {
@@ -68,4 +75,25 @@
 .loginBtn:active {
   scale: 0.99;
   background: #7647dc;
+}
+
+.howToButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #7647dcd8;
+  color: black;
+  border-radius: 100%;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+
+  transition: all 0.3s ease-in-out;
 }
